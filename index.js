@@ -1,3 +1,4 @@
+//下記のサイトを参考にさせていただきました。
 //jQuery templatesを利用して元のHTMLにテンプレート用のタグをできるだけ入れないようにしてみた
 //http://qwerty1qaz.blogspot.com/2011/10/jquery-templateshtml.html
 
@@ -45,6 +46,6 @@ function addTable() {
 	// さらに、テンプレートtemplateに追加する。
 	$.tmpl("result-table2", data2).appendTo(template);
 
-	// idがresult-divの要素に、データdataを設定したテンプレートresult-table1を追加する
+	// 作成したテンプレートをidがresult-divの
 	template.appendTo("#result-div");
 }
