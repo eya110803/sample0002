@@ -38,10 +38,13 @@ function addTable() {
 	data[0].rowspan1 = 3 + data2.length; 	// 必須の３行の１行目から結合する
 	data[0].rowspan2 = 3 + data2.length - 2 // 必須の３行の３行目から結合する
 
+	// keyがresult-table1のテンプレートにdataを設定したテンプレートを作成する
+	var template = $.tmpl("result-table1", data);
+
+	// keyがresult-table2のテンプレートにdata2を設定したテンプレートを作成する。
+	// さらに、テンプレートtemplateに追加する。
+	$.tmpl("result-table2", data2).appendTo(template);
+
 	// idがresult-divの要素に、データdataを設定したテンプレートresult-table1を追加する
-	$.tmpl("result-table1", data).appendTo("#result-div");
-
-	// idがresult-table1の要素に、データdata2を設定したテンプレートresult-table2を追加する
-	$.tmpl("result-table2", data2).appendTo("#result-table1");
-
+	template.appendTo("#result-div");
 }
